@@ -46,7 +46,43 @@ WHERE Income_Category = "Less than $40k";
 SELECT Customer_Age, COUNT(*)
 FROM cc.crecarddataset
 GROUP BY Customer_Age
-HAVING COUNT(*) > 1;
+
+-- Lets see the releationship between Customer Age and the Income Category
+SELECT Customer_Age, Income_Category, count(*) Category_Count
+From cc.crecarddataset
+GROUP BY Customer_Age, Income_Category
+
+SELECT Customer_Age, Income_Category, count(*) Category_Count
+From cc.crecarddataset
+WHERE Customer_Age < 30
+GROUP BY Customer_Age, Income_Category
+
+SELECT Customer_Age, Income_Category, count(*) Category_Count
+From cc.crecarddataset
+WHERE Customer_Age BETWEEN 31 AND 45
+GROUP BY Customer_Age, Income_Category
+
+SELECT Customer_Age, Income_Category, count(*) Category_Count
+From cc.crecarddataset
+WHERE Customer_Age BETWEEN 45 AND 73
+GROUP BY Customer_Age, Income_Category
+
+-- Lets see the releationship between Education Level and the Income Category
+SELECT Education_Level, Income_Category, count(*) Category_Count
+From cc.crecarddataset
+GROUP BY Education_Level, Income_Category
+
+-- Lets see the releationship between Customer Age and the Total Transaction Amount
+SELECT Customer_Age, Total_Trans_Amt
+From cc.crecarddataset
+
+-- Lets see the releationship between Education Level and the Total Transaction Amount
+SELECT Education_Level, Total_Trans_Amt
+From cc.crecarddataset
+
+
+
+
 
 
 
